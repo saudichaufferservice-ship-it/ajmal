@@ -20,7 +20,7 @@ export default function AboutPage() {
       <section className="relative min-h-[70vh] flex items-center pt-24 pb-20 overflow-hidden bg-slate-900 border-b border-white/5">
         <div className="absolute inset-0 z-0 text-white">
           <Image 
-            src="/gmc-fleet/premium-gmc-fleet-riyadh.webp" 
+            src="/fleet/gmc-yukon-xl-premium-chauffeur-saudi.webp" 
             alt="Saudi Chauffeur Service Heritage" 
             fill 
             className="object-cover opacity-40"
@@ -49,7 +49,7 @@ export default function AboutPage() {
 
             <div className="flex justify-center pt-8">
                <Link href="/#book" className="w-full sm:w-auto px-12 py-5 bg-white text-slate-900 font-bold rounded-full hover:bg-gold-accent hover:text-white shadow-2xl tracking-[0.3em] uppercase text-xs transition-all active:scale-95">
-                 Secure Protocol
+                 Get Quote
                </Link>
             </div>
           </div>
@@ -59,17 +59,17 @@ export default function AboutPage() {
       {/* Mission & Vision Section */}
       <section className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
               <div className="space-y-12">
                  <div className="space-y-6">
                     <p className="text-primary font-bold tracking-[0.5em] uppercase text-xs">Our Commitment</p>
-                    <h2 className="text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Mission <br /> <span>Protocol.</span></h2>
+                    <h2 className="text-4xl lg:text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Mission <br /> <span>Protocol.</span></h2>
                     <p className="text-xl text-slate-500 font-light leading-relaxed">
                        To provide seamless, secure, and prestigious mobility solutions that reflect the hospitality and vision of Saudi Arabia. We bridge cities with a fleet that represents the latest in automotive luxury.
                     </p>
                  </div>
                  
-                 <div className="bg-slate-50 rounded-[2.5rem] p-10 border border-slate-100">
+                 <div className="bg-slate-50 rounded-2xl md:rounded-[2.5rem] p-6 md:p-10 border border-slate-100">
                     <p className="text-primary text-[10px] font-bold tracking-[0.4em] uppercase mb-4">Vision 2030 Alignment</p>
                     <p className="text-slate-600 font-light text-lg leading-relaxed">
                        &quot;Supporting the Kingdom&apos;s growth as a global hub for business and tourism by providing world-class ground transportation that meets international standards.&quot;
@@ -78,9 +78,9 @@ export default function AboutPage() {
               </div>
 
               <div className="relative group">
-                 <div className="aspect-square rounded-[3rem] overflow-hidden shadow-3xl border-8 border-white relative z-10">
+                 <div className="aspect-[4/3] md:aspect-square rounded-3xl md:rounded-[3rem] overflow-hidden shadow-2xl md:shadow-3xl border-4 md:border-8 border-white relative z-10">
                     <Image 
-                      src="/gmc-fleet/luxury-gmc-yukon-xl-saudi-arabia.webp" 
+                      src="/fleet/cadillac-escalade-chauffeur-service-ksa.webp" 
                       alt="Signature Fleet Presence" 
                       fill 
                       className="object-cover group-hover:scale-110 transition-transform duration-[2000ms]" 
@@ -95,7 +95,7 @@ export default function AboutPage() {
       {/* Core Values Section */}
       <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h2 className="text-4xl font-black uppercase tracking-widest font-heading mb-20">Five Pillars <br /> <span className="text-gold-accent">of Trust.</span></h2>
+            <h2 className="text-3xl md:text-4xl font-black uppercase tracking-widest font-heading mb-12 md:mb-20">Five Pillars <br /> <span className="text-gold-accent">of Trust.</span></h2>
             
             <div className="grid grid-cols-1 md:grid-cols-5 gap-12 lg:gap-8">
                {[
@@ -124,17 +124,35 @@ export default function AboutPage() {
       <TrustSignals />
       <AuthorAuthority />
 
+      {/* Semantic GEO & Entities Authority Block */}
+      <section className="py-24 bg-slate-50 border-t border-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center space-y-8 max-w-4xl mx-auto">
+             <h2 className="text-2xl md:text-3xl font-black text-slate-900 uppercase font-heading">The Kingdom&apos;s Centralized Luxury Fleet Operator</h2>
+             <p className="text-base md:text-lg text-slate-600 font-light leading-relaxed">
+               As Saudi Arabia rapidly modernizes under <strong className="font-bold text-slate-900">Vision 2030</strong>, the demand for unmatched 
+               <strong className="font-bold text-slate-900"> executive ground transportation</strong> and <strong className="font-bold text-slate-900">private limousine services</strong> has never been higher. 
+               We operate an extensive proprietary fleet of premium vehicles—from the <strong className="font-bold text-slate-900">Mercedes-Benz S-Class</strong> and 
+               <strong className="font-bold text-slate-900"> Cadillac Escalade SUVs</strong> to specialized VIP multi-passenger coaches like the <strong className="font-bold text-slate-900">Mercedes Sprinter</strong>.
+             </p>
+             <p className="text-base md:text-lg text-slate-600 font-light leading-relaxed">
+               From immediate <strong className="font-bold text-slate-900">Riyadh International Airport (RUH) transfers</strong> to bespoke financial roadshows in <strong className="font-bold text-slate-900">Jeddah</strong>, our logistical precision ensures you arrive safely and punctually. Every route across <strong className="font-bold text-slate-900">Saudi Arabia</strong> and neighboring <strong className="font-bold text-slate-900">GCC nations</strong> is supported by bilingual, professionally vetted chauffeurs extensively trained in diplomatic protocol.
+             </p>
+          </div>
+        </div>
+      </section>
+
       {/* Final Call to Action - Qatar Style */}
       <section className="py-32 bg-white relative overflow-hidden">
         <div className="max-w-5xl mx-auto px-4 text-center space-y-12">
-           <h2 className="text-5xl md:text-7xl font-black text-slate-900 font-heading leading-tight uppercase">The Choice of <br /> <span className="text-primary">DIGNITARIES.</span></h2>
+           <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-slate-900 font-heading leading-tight uppercase">The Choice of <br /> <span className="text-primary">DIGNITARIES.</span></h2>
            <p className="text-xl text-slate-500 font-light max-w-2xl mx-auto">Join the executive network that relies on us for mission-critical transportation across the Middle East.</p>
            
            <div className="flex flex-col sm:flex-row gap-8 justify-center items-center">
-              <Link href="/contact/" className="px-12 py-6 bg-slate-900 text-white font-bold rounded-full hover:bg-gold-accent transition-all shadow-2xl tracking-[0.3em] uppercase text-xs">
+              <Link href="/contact/" className="w-full sm:w-auto text-center px-12 py-5 sm:py-6 bg-slate-900 text-white font-bold rounded-full hover:bg-gold-accent transition-all shadow-2xl tracking-[0.3em] uppercase text-[10px] sm:text-xs">
                  Contact Concierge
               </Link>
-              <Link href="https://wa.me/966549100151" className="flex items-center gap-3 px-12 py-6 bg-primary text-white font-bold rounded-full hover:bg-primary-hover shadow-2xl tracking-[0.3em] uppercase text-xs transition-all">
+              <Link href="https://wa.me/966549100151" className="w-full sm:w-auto flex items-center justify-center gap-3 px-12 py-5 sm:py-6 bg-primary text-white font-bold rounded-full hover:bg-primary-hover shadow-2xl tracking-[0.3em] uppercase text-[10px] sm:text-xs transition-all">
                  <MessageCircle size={20} />
                  WhatsApp Protocol
               </Link>

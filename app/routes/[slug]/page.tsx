@@ -143,7 +143,7 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
               </p>
               <div className="flex flex-col sm:flex-row gap-4 pt-10 px-2 sm:px-0">
                 <Link href="#book" className="w-full sm:w-auto px-10 py-5 bg-[#C49A6C] text-white font-bold rounded-xl hover:bg-black transition-all shadow-lg active:scale-95 text-center uppercase tracking-widest">
-                  Secure Protocol
+                  Get Quote
                 </Link>
                 <Link href={`https://wa.me/966549100151?text=Hello, I want to book a transfer from ${route.from} to ${route.to}`} className="w-full sm:w-auto px-10 py-5 bg-white border-2 border-black text-black font-bold rounded-xl hover:bg-black hover:text-white transition-all flex items-center justify-center">
                   <MessageCircle size={20} className="mr-3 text-[#25D366]" />
@@ -151,8 +151,8 @@ export default async function RoutePage({ params }: { params: Promise<{ slug: st
                 </Link>
               </div>
             </div>
-            <div id="book" className="lg:w-2/5 w-full">
-              <BookingForm title={`${route.from} to ${route.to} Transfer`} />
+            <div id="book" className="lg:w-2/5 w-full bg-slate-900 md:bg-transparent -mx-4 md:mx-0 px-4 md:px-0 py-8 md:py-0 rounded-none md:rounded-3xl mt-8 lg:mt-0">
+              <BookingForm title={`${route.from} to ${route.to} Transfer`} dark />
             </div>
           </div>
         </div>

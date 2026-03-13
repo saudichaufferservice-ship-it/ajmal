@@ -1,0 +1,13 @@
+<svg width="400" height="100" viewBox="0 0 400 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Symbol: Stylized "S" Emblem -->
+  <rect x="10" y="10" width="60" height="80" rx="15" fill="#C49A6C" />
+  <path d="M40 25L52 38H28L40 25Z" fill="white" />
+  <text x="40" y="75" text-anchor="middle" fill="white" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 36px;">S</text>
+  
+  <!-- Text Content: SAUDI CHAUFFEUR (White version) -->
+  <text x="85" y="55" fill="white" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 32px; letter-spacing: -0.02em;">SAUDI</text>
+  <text x="195" y="55" fill="#C49A6C" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 400; font-size: 32px; letter-spacing: -0.02em;">CHAUFFEUR</text>
+  
+  <!-- Tagline -->
+  <text x="85" y="82" fill="#94A3B8" style="font-family: system-ui, -apple-system, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.4em; text-transform: uppercase;">KINGDOM'S PROTOCOL ELITE</text>
+</svg>
