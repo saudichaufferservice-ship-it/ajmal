@@ -40,15 +40,15 @@ export default function BookingForm({ dark = false, title = "General Inquiry" }:
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
-        <div>
+      <div className="flex flex-col lg:grid lg:grid-cols-2 gap-6 mb-6">
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Pickup Location</label>
           <div className="relative">
             <MapPin className={iconClass} size={16} />
             <input type="text" name="pickup" required placeholder="City, hotel, or address" className={inputClass} onChange={handleChange} />
           </div>
         </div>
-        <div>
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Destination</label>
           <div className="relative">
             <Navigation className={iconClass} size={16} />
@@ -57,22 +57,22 @@ export default function BookingForm({ dark = false, title = "General Inquiry" }:
         </div>
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
-        <div>
+      <div className="flex flex-col lg:grid lg:grid-cols-4 gap-6 mb-10">
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Date</label>
           <div className="relative">
             <Calendar className={iconClass} size={16} />
             <input type="date" name="date" required className={inputClass} onChange={handleChange} />
           </div>
         </div>
-        <div>
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Time</label>
           <div className="relative">
             <Clock className={iconClass} size={16} />
             <input type="time" name="time" required className={inputClass} onChange={handleChange} />
           </div>
         </div>
-        <div>
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Passengers</label>
           <div className="relative">
             <Users className={iconClass} size={16} />
@@ -81,7 +81,7 @@ export default function BookingForm({ dark = false, title = "General Inquiry" }:
             </select>
           </div>
         </div>
-        <div>
+        <div className="space-y-2 w-full">
           <label className={labelClass}>Luggage</label>
           <div className="relative">
             <Briefcase className={iconClass} size={16} />

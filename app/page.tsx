@@ -50,7 +50,7 @@ export default function Home() {
             {/* Eyebrow */}
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px w-12 bg-[#C49A6C]" />
-              <span className="text-[11px] font-black tracking-[0.3em] uppercase text-[#C49A6C]">Kingdom's Premier Chauffeur Service · Since 2018</span>
+              <span className="text-[9px] xs:text-[10px] sm:text-[11px] font-black tracking-[0.3em] uppercase text-[#C49A6C]">Kingdom's Premier Chauffeur Service · Since 2018</span>
             </div>
 
             {/* Main headline */}
@@ -109,7 +109,7 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section id="book" className="bg-white py-24 scroll-mt-20">
         <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className="bg-slate-950 rounded-2xl p-8 md:p-12 shadow-2xl border border-slate-800">
+          <div className="bg-slate-950 rounded-2xl p-6 sm:p-8 md:p-12 shadow-2xl border border-slate-800">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
               <div>
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative h-[280px] xs:h-[350px] sm:h-[450px] lg:h-[480px] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
                 src="/gmc-fleet/gmc-interior-luxury-transport-saudi.webp"
                 alt="GMC Yukon Interior"
@@ -235,7 +235,7 @@ export default function Home() {
               <Plane size={16} className="text-[#C49A6C]" />
               <p className="text-[11px] uppercase tracking-[0.3em] text-[#C49A6C] font-bold">Airport Transfers · JED · RUH · DMM</p>
             </div>
-            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6">
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6">
               Arrive in Style.<br /><span className="text-[#C49A6C]">Every Time.</span>
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed mb-10">
@@ -345,7 +345,7 @@ export default function Home() {
         <div className="absolute inset-0 opacity-10 bg-[url('/gmc-fleet/premium-gmc-fleet-riyadh.webp')] bg-cover bg-center" />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <div className="h-px w-12 bg-[#C49A6C] mx-auto mb-8" />
-          <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6">
             Your Journey.<br />Elevated.
           </h2>
           <p className="text-white/70 text-lg max-w-lg mx-auto mb-10">

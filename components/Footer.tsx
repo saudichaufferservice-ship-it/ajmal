@@ -4,18 +4,18 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0F172A] text-white pt-32 pb-12 overflow-hidden">
+    <footer className="relative bg-[#0F172A] text-white pt-20 sm:pt-32 pb-12 overflow-hidden">
       {/* Decorative Brand Accents */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-accent/30 to-transparent" />
       <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold-accent/5 rounded-full blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 mb-20">
           {/* Brand & Mission */}
-          <div className="space-y-10">
+          <div className="space-y-8">
             <Link href="/" className="flex flex-col group">
-              <span className="text-3xl font-black tracking-tighter text-white flex items-center">
+              <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white flex items-center">
                 SAUDI <span className="ml-2 text-primary">CHAUFFEUR</span>
               </span>
               <div className="flex items-center gap-3 mt-1">
@@ -98,11 +98,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className="pt-12 border-t border-white/5 flex flex-col items-center text-center gap-6">
           <p className="text-slate-500 text-[10px] font-bold tracking-widest uppercase">
             © {new Date().getFullYear()} Saudi Chauffeur Service. All Rights Reserved.
           </p>
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8">
              <Link href="/privacy-policy/" className="text-slate-500 hover:text-white text-[10px] font-bold tracking-widest uppercase transition-colors">Privacy Policy</Link>
              <Link href="/terms-conditions/" className="text-slate-500 hover:text-white text-[10px] font-bold tracking-widest uppercase transition-colors">Terms of Service</Link>
              <div className="flex items-center gap-2">

@@ -111,10 +111,10 @@ export default async function DynamicSlugPage({ params }: { params: Promise<{ sl
         {/* Integrated 5-Star Booking Form */}
         <section id="book" className="relative -mt-12 z-20 pb-24">
            <div className="max-w-5xl mx-auto px-4">
-              <div className="bg-white rounded-[2.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] p-8 md:p-12 border border-slate-100 overflow-hidden relative">
+              <div className="bg-white rounded-[2.5rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] p-6 sm:p-8 md:p-12 border border-slate-100 overflow-hidden relative">
                 <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
                 <div className="text-center mb-12">
-                   <h2 className="text-3xl font-black text-slate-900 uppercase tracking-widest font-heading">{city.name} Regional Protocol</h2>
+                   <h2 className="text-2xl sm:text-3xl font-black text-slate-900 uppercase tracking-widest font-heading">{city.name} Regional Protocol</h2>
                    <div className="w-16 h-1 bg-gold-accent mx-auto mt-4" />
                 </div>
                 <BookingForm title={`${city.name} Chauffeur`} />
@@ -128,8 +128,8 @@ export default async function DynamicSlugPage({ params }: { params: Promise<{ sl
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                <div className="space-y-12">
                   <div className="space-y-6">
-                    <p className="text-gold-accent font-bold tracking-[0.4em] uppercase text-xs">Regional Connectivity</p>
-                    <h2 className="text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Corporate & <br /> <span>Diplomatic Care.</span></h2>
+                    <p className="text-gold-accent font-bold tracking-[0.4em] uppercase text-xs">First Class Experience</p>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Terminal-to-Door <br /> <span>Service.</span></h2>
                     <p className="text-slate-500 font-light text-xl leading-relaxed">
                        Our {city.name} operations are designed for high-performance mobility. We understand the unique logistics of {city.name}&apos;s economic zones and residential protocols.
                     </p>
@@ -253,7 +253,7 @@ export default async function DynamicSlugPage({ params }: { params: Promise<{ sl
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
              <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                 <div className="space-y-10">
-                   <h2 className="text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Protocol <br /> <span>Specifications.</span></h2>
+                   <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Protocol <br /> <span>Specifications.</span></h2>
                    <p className="text-xl text-slate-500 font-light leading-relaxed">
                      {service.longDescription}
                    </p>
@@ -275,7 +275,7 @@ export default async function DynamicSlugPage({ params }: { params: Promise<{ sl
                    </div>
                 </div>
 
-                <div className="bg-slate-900 rounded-[3rem] p-16 text-white text-center space-y-8 relative overflow-hidden group">
+                <div className="bg-slate-900 rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-16 text-white space-y-10 relative overflow-hidden group">
                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                    <h3 className="text-4xl font-black font-heading uppercase">Elite <br /> <span className="text-gold-accent"> Concierge.</span></h3>
                    <p className="text-slate-400 font-light leading-relaxed">Need a customized itinerary for multiple cities? Support for flight changes or embassy protocols?</p>

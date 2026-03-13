@@ -104,7 +104,7 @@ export default function VIPCars() {
               <p className="text-slate-400 text-xs">Every vehicle is insured, GPS-tracked, and certified under KSA regulations.</p>
             </div>
           </div>
-          <div className="flex gap-10">
+          <div className="flex flex-wrap justify-center sm:justify-end gap-6 sm:gap-10">
             {[['100%', 'Compliant'], ['4.9/5', 'Rating'], ['24/7', 'Support']].map(([val, label]) => (
               <div key={label} className="text-center">
                 <p className="text-[#C49A6C] text-xl font-black">{val}</p>

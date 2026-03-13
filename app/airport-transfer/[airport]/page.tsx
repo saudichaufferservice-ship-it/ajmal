@@ -91,7 +91,7 @@ export default async function AirportPage({ params }: { params: Promise<{ airpor
       {/* Integrated 5-Star Booking Interface */}
       <section id="book" className="relative -mt-12 z-20 pb-24">
          <div className="max-w-5xl mx-auto px-4">
-            <div className="bg-white rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] p-10 md:p-14 border border-slate-100 overflow-hidden relative">
+            <div className="bg-white rounded-[2.5rem] sm:rounded-[3rem] shadow-[0_50px_100px_rgba(0,0,0,0.15)] p-6 sm:p-10 md:p-14 border border-slate-100 overflow-hidden relative">
                <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
                <div className="text-center mb-12">
                   <h2 className="text-3xl font-black text-slate-900 uppercase tracking-widest font-heading">{airport.code} GROUND PROTOCOL</h2>
@@ -109,7 +109,7 @@ export default async function AirportPage({ params }: { params: Promise<{ airpor
               <div className="space-y-12">
                  <div className="space-y-6">
                     <p className="text-gold-accent font-bold tracking-[0.4em] uppercase text-xs">First Class Experience</p>
-                    <h2 className="text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Terminal-to-Door <br /> <span>Service.</span></h2>
+                    <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 uppercase font-heading leading-tight">Terminal-to-Door <br /> <span>Service.</span></h2>
                     <p className="text-xl text-slate-500 font-light leading-relaxed">
                        Our drivers are equipped with flight tracking and terminal access, ensuring that whether your flight lands early or is delayed, your chauffeur is waiting for you in the arrivals hall.
                     </p>
@@ -135,7 +135,7 @@ export default async function AirportPage({ params }: { params: Promise<{ airpor
                  </div>
               </div>
 
-              <div className="bg-slate-900 rounded-[3rem] p-16 text-white space-y-10 relative overflow-hidden group">
+              <div className="bg-slate-900 rounded-[2.5rem] sm:rounded-[3rem] p-8 sm:p-16 text-white space-y-10 relative overflow-hidden group">
                  <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                  <h3 className="text-4xl font-black font-heading uppercase">Concierge Desk <br /> <span className="text-gold-accent"> {airport.code}.</span></h3>
                  <p className="text-slate-400 font-light leading-relaxed text-lg">Supporting groups, VIP delegations, and solo executive travelers across all terminals.</p>
@@ -176,8 +176,8 @@ export default async function AirportPage({ params }: { params: Promise<{ airpor
       {/* Why Discerning Travelers Choose Us - Reused from Home */}
       <section className="py-24 bg-white text-center">
          <div className="max-w-7xl mx-auto px-4">
-            <h2 className="text-4xl font-black text-slate-900 uppercase tracking-tighter mb-16">The Kingdom&apos;s Protocol Standard</h2>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-900 uppercase tracking-tighter mb-16">The Kingdom&apos;s Protocol Standard</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8">
                {[
                  { icon: ShieldCheck, label: "LATEST MODELS", desc: "Pristine Luxury" },
                  { icon: Globe, label: "GCC WIDE", desc: "Regional Network" },
