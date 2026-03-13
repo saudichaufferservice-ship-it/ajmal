@@ -6,7 +6,9 @@ import {
   Globe, 
   Calendar,
   Building2,
-  Users
+  Users,
+  Clock,
+  Compass
 } from 'lucide-react';
 
 export interface Service {
@@ -24,6 +26,20 @@ export const services: Service[] = [
     description: "Reliable airport pickups and drop-offs in Saudi Arabia.",
     longDescription: "Our professional chauffeurs provide seamless airport transfers across major cities, ensuring you reach your destination with comfort and ease.",
     icon: Plane
+  },
+  { 
+    title: "Hourly Service", 
+    slug: "hourly-chauffeur-service-saudi", 
+    description: "Book a chauffeur by the hour for maximum flexibility.",
+    longDescription: "Ideal for business meetings, shopping trips, or city tours. Our hourly service gives you a dedicated chauffeur and premium vehicle for as long as you need.",
+    icon: Clock
+  },
+  { 
+    title: "Point to Point", 
+    slug: "point-to-point-transfer-saudi", 
+    description: "Specific door-to-door transfers within the city.",
+    longDescription: "Simple, direct transportation from one specific location to another. Perfect for executive commutes and local private travel.",
+    icon: Compass
   },
   { 
     title: "City to City Transfer", 

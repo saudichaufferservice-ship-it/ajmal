@@ -12,6 +12,7 @@ import VIPCars from '@/components/VIPCars';
 import HomeFAQ from '@/components/HomeFAQ';
 import TrustSignals from '@/components/TrustSignals';
 import AuthorAuthority from '@/components/AuthorAuthority';
+import { services } from '@/data/services';
 
 import HeroSlider from '@/components/HeroSlider';
 
@@ -154,6 +155,60 @@ export default function Home() {
                 <p className="text-slate-500 group-hover:text-slate-400 text-sm leading-relaxed transition-colors">{f.desc}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════════════════════════════════════════
+          CHAUFFEUR SERVICES — Grid layout
+      ═══════════════════════════════════════════ */}
+      <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
+        {/* Subtle background text */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[15vw] font-black text-slate-100/50 pointer-events-none select-none uppercase -z-0">
+          Services
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+          <div className="text-center mb-20">
+            <p className="text-[11px] uppercase tracking-[0.4em] text-gold-accent font-black mb-4">Elite Solutions</p>
+            <h2 className="text-4xl md:text-5xl font-black text-slate-900 uppercase font-heading leading-tight">
+              Executive Chauffeur <br /> <span className="text-gold-accent">Services.</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {services.slice(0, 6).map((service, i) => (
+              <div key={i} className="group bg-white rounded-3xl p-8 border border-slate-100 hover:border-gold-accent/30 hover:shadow-2xl transition-all duration-500 flex flex-col h-full">
+                <div className="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center mb-8 group-hover:bg-gold-accent group-hover:rotate-6 transition-all duration-500">
+                  <service.icon size={32} className="text-gold-accent group-hover:text-white" />
+                </div>
+                
+                <h3 className="text-2xl font-black text-slate-900 mb-4 uppercase tracking-tight">{service.title}</h3>
+                <p className="text-slate-500 font-light leading-relaxed mb-8 flex-grow">
+                  {service.description}
+                </p>
+
+                <div className="pt-6 border-t border-slate-50">
+                  <Link 
+                    href={`https://wa.me/966549100151?text=Hello! I would like to get a quote for ${service.title} service.`}
+                    className="flex items-center justify-center gap-3 w-full py-4 bg-slate-900 text-white font-bold rounded-xl hover:bg-gold-accent transition-all duration-300 shadow-lg text-sm uppercase tracking-widest"
+                  >
+                    <MessageCircle size={18} className="text-green-400" />
+                    Request Quote
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 text-center">
+            <Link 
+              href="/contact/" 
+              className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-gold-accent transition-colors group px-8 py-3 bg-white border border-slate-200 rounded-full shadow-sm hover:shadow-md"
+            >
+              See All Services
+              <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+            </Link>
           </div>
         </div>
       </section>
