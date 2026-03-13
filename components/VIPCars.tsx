@@ -1,116 +1,137 @@
 import React from 'react';
-import { Users, Briefcase, MessageCircle, ShieldCheck } from 'lucide-react';
+import { Users, Briefcase, MessageCircle, ShieldCheck, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
-
-const cars = [
-  { name: "GMC Yukon XL Denali", badge: "Platinum Elite", badgeColor: "#C49A6C", category: "Signature Series", passengers: 7, luggage: 6, features: ["Massaging Seats", "Rear Entertainment", "Protocol Driver"], image: "/gmc-fleet/luxury-gmc-yukon-xl-saudi-arabia.webp" },
-  { name: "GMC Yukon XL Premium", badge: "Gold Class", badgeColor: "#701D45", category: "Executive Class", passengers: 7, luggage: 5, features: ["Top-Tier Comfort", "Bilingual Driver", "On-Board Wifi"], image: "/gmc-fleet/premium-gmc-fleet-riyadh.webp" },
-  { name: "GMC Yukon XL Protocol", badge: "Diplomatic", badgeColor: "#0c1320", category: "VIP Diplomatic", passengers: 7, luggage: 6, features: ["Armored Option", "Satellite Comms", "Elite Captain"], image: "/gmc-fleet/black-gmc-chauffeur-service-ksa.webp" },
-  { name: "GMC Yukon XL Airport", badge: "Swift Transfer", badgeColor: "#2563EB", category: "Airport Special", passengers: 7, luggage: 8, features: ["Extra Boot Space", "Meet & Greet", "Flight Tracking"], image: "/gmc-fleet/gmc-yukon-airport-transfer-jeddah.webp" },
-  { name: "GMC Yukon XL Hajj", badge: "Pilgrim Care", badgeColor: "#059669", category: "Hajj & Umrah", passengers: 7, luggage: 5, features: ["Makkah Expert Driver", "Spacious Cabin", "Prayer Stop Ready"], image: "/gmc-fleet/vip-gmc-transportation-makkah.webp" },
-  { name: "GMC Yukon XL Business", badge: "Corporate", badgeColor: "#475569", category: "Corporate Fleet", passengers: 7, luggage: 4, features: ["Privacy Tints", "USB-C Charging", "Daily Rates"], image: "/gmc-fleet/chauffeur-driven-gmc-yukon-saudi.webp" },
-  { name: "GMC Yukon XL Tourist", badge: "Leisure", badgeColor: "#9333EA", category: "Tourist Class", passengers: 7, luggage: 4, features: ["Panoramic Roof", "Tour Guide Option", "Flexible Routes"], image: "/gmc-fleet/gmc-yukon-xl-luxury-chauffeur-saudi.webp" },
-  { name: "GMC Interior Suite", badge: "All Models", badgeColor: "#C49A6C", category: "Standard in All", passengers: 7, luggage: 6, features: ["Leather Seating", "Triple-Zone A/C", "Premium Sound"], image: "/gmc-fleet/gmc-interior-luxury-transport-saudi.webp" },
-];
+import { vehicles } from '@/data/fleet';
 
 export default function VIPCars() {
   return (
-    <section className="py-20 bg-slate-950">
+    <section className="py-24 bg-slate-950 relative overflow-hidden">
+      {/* Background glow */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#C49A6C]/5 rounded-full blur-[120px] -z-10" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#701D45]/5 rounded-full blur-[120px] -z-10" />
+
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Section header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-14">
-          <div>
-            <p className="text-[11px] uppercase tracking-[0.3em] text-[#C49A6C] font-bold mb-3">GMC Fleet Collection</p>
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">The Kingdom's Premier<br />Executive Fleet.</h2>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="h-px w-8 bg-[#C49A6C]" />
+              <p className="text-[11px] uppercase tracking-[0.4em] text-[#C49A6C] font-black">Elite Fleet Collection</p>
+            </div>
+            <h2 className="text-4xl md:text-6xl font-black text-white leading-[1.1]">The Kingdom's Premier<br /><span className="text-gold-accent">Luxury Fleet.</span></h2>
           </div>
-          <p className="text-slate-400 text-sm max-w-xs leading-relaxed">
-            Every vehicle is configured, insured, and maintained to a 5-star standard for executive ground transport.
-          </p>
+          <div className="max-w-xs">
+            <p className="text-slate-400 text-sm leading-relaxed mb-6 font-light">
+              From executive sedans to VIP coaches, every vehicle is maintained to a 5-star protocol standard for discerning clients.
+            </p>
+            <Link href="https://wa.me/966549100151" className="inline-flex items-center gap-2 text-[#C49A6C] text-xs font-bold uppercase tracking-widest hover:gap-4 transition-all group">
+              View All Specs <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-          {cars.map((car, i) => (
-            <div key={i} className="group bg-slate-900 rounded-2xl border border-slate-800 overflow-hidden hover:border-[#C49A6C]/40 hover:-translate-y-1 transition-all duration-300">
-              {/* Image */}
-              <div className="relative h-44 bg-slate-800">
-                <Image
-                  src={car.image}
-                  alt={car.name}
-                  fill
-                  className="object-contain p-4 group-hover:scale-105 transition-transform duration-500"
-                />
-                {/* Badge */}
-                <div className="absolute top-3 left-3">
-                  <span
-                    className="text-white text-[10px] font-black px-3 py-1 rounded-full uppercase tracking-wider"
-                    style={{ backgroundColor: car.badgeColor }}
-                  >
-                    {car.badge}
-                  </span>
+        {/* Fleet Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {vehicles.filter(car => car && car.image && car.image.length > 5).map((car) => (
+            <div key={car.slug} className="group relative bg-slate-900/40 backdrop-blur-sm rounded-[2rem] border border-white/5 overflow-hidden hover:border-[#C49A6C]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#C49A6C]/10 translate-y-0 hover:-translate-y-2">
+              
+              {/* Image Container */}
+              <div className="relative h-56 w-full pt-8 bg-gradient-to-b from-white/5 to-transparent">
+                <div className="relative h-40 w-[90%] mx-auto">
+                    <Image
+                      src={car.image}
+                      alt={car.name}
+                      fill
+                      className="object-contain group-hover:scale-105 transition-transform duration-700 ease-out"
+                    />
                 </div>
+                
+                {/* Badge Overlay */}
+                {car.badge && (
+                  <div className="absolute top-6 left-6">
+                    <span 
+                      className="text-[9px] font-black px-4 py-1.5 rounded-full uppercase tracking-widest text-white shadow-lg backdrop-blur-md"
+                      style={{ backgroundColor: car.badgeColor || '#C49A6C' }}
+                    >
+                      {car.badge}
+                    </span>
+                  </div>
+                )}
               </div>
 
-              {/* Content */}
-              <div className="p-5 space-y-4">
-                <div>
-                  <p className="text-[10px] text-[#C49A6C] font-bold uppercase tracking-widest mb-1">{car.category}</p>
-                  <h3 className="text-base font-black text-white">{car.name}</h3>
+              {/* Content Information */}
+              <div className="p-8">
+                <div className="mb-6">
+                  <p className="text-[10px] text-[#C49A6C] font-bold uppercase tracking-[0.2em] mb-2">{car.category}</p>
+                  <h3 className="text-xl font-black text-white group-hover:text-[#C49A6C] transition-colors">{car.name}</h3>
                 </div>
 
-                {/* Specs row */}
-                <div className="flex items-center gap-4">
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <Users size={13} className="text-slate-500" />
-                    <span>{car.passengers} seats</span>
+                {/* Technical Specs */}
+                <div className="grid grid-cols-2 gap-4 mb-8">
+                  <div className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/5 border border-white/5">
+                    <Users size={16} className="text-slate-500" />
+                    <div>
+                        <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-tighter">Capacity</p>
+                        <p className="text-xs text-zinc-200 font-bold">{car.passengers} Seats</p>
+                    </div>
                   </div>
-                  <div className="w-px h-4 bg-slate-700" />
-                  <div className="flex items-center gap-1.5 text-xs text-slate-400">
-                    <Briefcase size={13} className="text-slate-500" />
-                    <span>{car.luggage} bags</span>
+                  <div className="flex items-center gap-3 py-3 px-4 rounded-xl bg-white/5 border border-white/5">
+                    <Briefcase size={16} className="text-slate-500" />
+                    <div>
+                        <p className="text-[9px] text-zinc-500 uppercase font-bold tracking-tighter">Storage</p>
+                        <p className="text-xs text-zinc-200 font-bold">{car.luggage} Bags</p>
+                    </div>
                   </div>
                 </div>
 
-                {/* Features */}
-                <ul className="space-y-1.5">
-                  {car.features.map((f, j) => (
-                    <li key={j} className="flex items-center gap-2 text-xs text-slate-400">
-                      <div className="w-1 h-1 rounded-full bg-[#C49A6C] flex-shrink-0" />
+                {/* Feature Icons List */}
+                <div className="space-y-3 mb-8">
+                  {car.features.slice(0, 3).map((f, j) => (
+                    <div key={j} className="flex items-center gap-3 text-xs text-slate-400 font-light">
+                      <div className="w-1 h-1 rounded-full bg-[#C49A6C]" />
                       {f}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
 
-                {/* CTA */}
+                {/* Booking Button */}
                 <Link
                   href="https://wa.me/966549100151"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-slate-800 border border-slate-700 text-white text-xs font-bold rounded-xl hover:bg-[#C49A6C] hover:border-[#C49A6C] hover:text-[#0c1320] transition-all duration-300 group/btn"
+                  className="group/btn flex items-center justify-center gap-3 w-full py-4 bg-white/5 border border-white/10 text-white text-xs font-black rounded-2xl hover:bg-[#C49A6C] hover:border-[#C49A6C] hover:text-[#0c1320] transition-all duration-300 uppercase tracking-widest"
                 >
-                  <MessageCircle size={14} />
-                  Get a Quote
+                  <MessageCircle size={16} className="group-hover/btn:scale-110 transition-transform" />
+                  Get Quote
                 </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom guarantee bar */}
-        <div className="mt-12 pt-10 border-t border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <ShieldCheck className="text-[#C49A6C]" size={28} />
-            <div>
-              <p className="text-white font-bold text-sm">Fleet Guarantee</p>
-              <p className="text-slate-400 text-xs">Every vehicle is insured, GPS-tracked, and certified under KSA regulations.</p>
-            </div>
-          </div>
-          <div className="flex flex-wrap justify-center sm:justify-end gap-6 sm:gap-10">
-            {[['100%', 'Compliant'], ['4.9/5', 'Rating'], ['24/7', 'Support']].map(([val, label]) => (
-              <div key={label} className="text-center">
-                <p className="text-[#C49A6C] text-xl font-black">{val}</p>
-                <p className="text-slate-500 text-[10px] uppercase tracking-widest mt-1">{label}</p>
+        {/* Bottom trust bar */}
+        <div className="mt-20 pt-12 border-t border-white/10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 rounded-2xl bg-[#C49A6C]/10 border border-[#C49A6C]/20 flex items-center justify-center">
+                <ShieldCheck className="text-[#C49A6C]" size={32} />
               </div>
-            ))}
+              <div>
+                <p className="text-white font-black text-lg uppercase tracking-wider">Operational Integrity</p>
+                <p className="text-slate-500 text-sm font-light">Every vehicle is GPS-monitored, fully insured, and routinely sanitized for VIP protocol.</p>
+              </div>
+            </div>
+            <div className="flex justify-between md:justify-end gap-12 lg:gap-20">
+              {[
+                ['100%', 'Safety Record'],
+                ['4.9/5', 'Client Reviews'],
+                ['24/7', 'Protocol Ops']
+              ].map(([val, label]) => (
+                <div key={label} className="text-left md:text-center">
+                  <p className="text-[#C49A6C] text-2xl font-black">{val}</p>
+                  <p className="text-slate-500 text-[9px] uppercase tracking-widest mt-1 font-bold">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

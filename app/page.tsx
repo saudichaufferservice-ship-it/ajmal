@@ -13,6 +13,8 @@ import HomeFAQ from '@/components/HomeFAQ';
 import TrustSignals from '@/components/TrustSignals';
 import AuthorAuthority from '@/components/AuthorAuthority';
 
+import HeroSlider from '@/components/HeroSlider';
+
 export const metadata: Metadata = {
   title: 'Saudi Chauffeur Service | Premium GMC Fleet Across KSA',
   description: 'Professional GMC chauffeur service across Saudi Arabia. Airport transfers, Hajj & Umrah transport, city-to-city travel, and GCC border crossing. Book via WhatsApp.',
@@ -24,69 +26,66 @@ export default function Home() {
     <main className="overflow-hidden">
 
       {/* ═══════════════════════════════════════════
-          HERO — Full bleed, cinematic
+          HERO — Cinematic Slider Layout
       ═══════════════════════════════════════════ */}
-      <section className="relative h-screen min-h-[700px] flex flex-col justify-end pb-0 bg-[#0c1320]">
-        {/* Background image */}
-        <div className="absolute inset-0">
-          <Image
-            src="/gmc-fleet/black-gmc-chauffeur-service-ksa.webp"
-            alt="Saudi Chauffeur Service — Premium GMC Fleet"
-            fill
-            className="object-cover"
-            priority
-          />
-          {/* Dark vignette layers */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1320] via-[#0c1320]/60 to-[#0c1320]/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1320]/90 via-[#0c1320]/40 to-transparent" />
-        </div>
+      <section className="relative min-h-[max(700px,100vh)] flex flex-col justify-center bg-[#0c1320] pt-20">
+        {/* Background Accents (No background image) */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#C49A6C]/5 rounded-full blur-[120px] -z-0" />
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-[#701D45]/5 rounded-full blur-[100px] -z-0" />
 
-        {/* Gold top accent bar */}
-        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#C49A6C] via-[#e8c98f] to-[#C49A6C]" />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 w-full">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            {/* Left Column: Copy */}
+            <div className="py-12 md:py-20">
+              {/* Eyebrow */}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="h-px w-12 bg-[#C49A6C]" />
+                <span className="text-[11px] font-black tracking-[0.3em] uppercase text-[#C49A6C]">Kingdom's Premier Chauffeur Service · Since 2018</span>
+              </div>
 
-        {/* Hero content — bottom anchored */}
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pb-20 w-full">
-          <div className="max-w-3xl">
-            {/* Eyebrow */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px w-12 bg-[#C49A6C]" />
-              <span className="text-[9px] xs:text-[10px] sm:text-[11px] font-black tracking-[0.3em] uppercase text-[#C49A6C]">Kingdom's Premier Chauffeur Service · Since 2018</span>
+              {/* Main headline */}
+              <h1 className="text-[32px] md:text-[56px] font-normal text-white leading-tight mb-6 md:mb-8 text-balance">
+                Executive<br />
+                <span className="text-[#C49A6C]">Ground Transport</span><br />
+                Across Saudi Arabia.
+              </h1>
+
+              {/* Sub-headline */}
+              <p className="text-slate-300 text-base md:text-lg max-w-xl leading-relaxed mb-10 md:mb-12 font-light">
+                Discreet. Punctual. Impeccable. Elite fleet of GMC, Mercedes, and Cadillac chauffeurs for airports, Hajj, Umrah, and GCC border crossings — 24/7.
+              </p>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Link
+                  href="#book"
+                  className="group inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-5 sm:py-4 bg-[#C49A6C] text-[#0c1320] font-black text-sm rounded-lg hover:bg-[#e8c98f] transition-all duration-300 shadow-lg shadow-[#C49A6C]/20 uppercase tracking-widest"
+                >
+                  <MessageCircle size={18} />
+                  Book via WhatsApp
+                  <ArrowRight size={16} className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
+                </Link>
+                <Link
+                  href="tel:+966549100151"
+                  className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-5 sm:py-4 border border-white/25 text-white font-bold text-sm rounded-lg hover:bg-white/10 transition-all duration-300"
+                >
+                  <PhoneCall size={16} />
+                  +966 54 910 0151
+                </Link>
+              </div>
             </div>
 
-            {/* Main headline */}
-            <h1 className="text-[32px] font-normal text-white leading-tight mb-6 md:mb-8 text-balance">
-              Executive<br />
-              <span className="text-[#C49A6C]">Ground Transport</span><br />
-              Across Saudi Arabia.
-            </h1>
-
-            {/* Sub-headline */}
-            <p className="text-slate-300 text-base md:text-lg lg:text-xl max-w-xl leading-relaxed mb-10 md:mb-12 font-light">
-              Discreet. Punctual. Impeccable. GMC Yukon chauffeurs for airports, Hajj, Umrah, corporate missions and GCC border crossings — 24/7.
-            </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-4 mt-8 lg:mt-12">
-              <Link
-                href="#book"
-                className="group inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-5 sm:py-4 bg-[#C49A6C] text-[#0c1320] font-black text-sm rounded-lg hover:bg-[#e8c98f] transition-all duration-300 shadow-lg shadow-[#C49A6C]/20 uppercase tracking-widest"
-              >
-                <MessageCircle size={18} />
-                Secure Protocol
-                <ArrowRight size={16} className="opacity-0 -ml-2 group-hover:opacity-100 group-hover:ml-0 transition-all" />
-              </Link>
-              <Link
-                href="tel:+966549100151"
-                className="inline-flex items-center justify-center sm:justify-start gap-3 px-8 py-5 sm:py-4 border border-white/25 text-white font-bold text-sm rounded-lg hover:bg-white/10 transition-all duration-300"
-              >
-                <PhoneCall size={16} />
-                +966 54 910 0151
-              </Link>
+            {/* Right Column: Dynamic Slider */}
+            <div className="relative">
+              <HeroSlider />
             </div>
+
           </div>
         </div>
 
-        <div className="relative z-10 bg-[#C49A6C]/10 backdrop-blur-sm border-t border-[#C49A6C]/20">
+        {/* Stats bar */}
+        <div className="relative z-10 bg-[#C49A6C]/10 backdrop-blur-sm border-t border-[#C49A6C]/20 mt-12 md:mt-0">
           <div className="max-w-7xl mx-auto px-6 lg:px-12">
             <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-[#C49A6C]/20">
               {[
@@ -107,16 +106,16 @@ export default function Home() {
       {/* ═══════════════════════════════════════════
           BOOKING PANEL
       ═══════════════════════════════════════════ */}
-      <section id="book" className="bg-white py-24 scroll-mt-20">
-        <div className="max-w-6xl mx-auto px-6 lg:px-12">
-          <div className="bg-slate-950 rounded-2xl p-6 sm:p-8 md:p-12 shadow-2xl border border-slate-800">
+      <section id="book" className="bg-white py-12 md:py-24 scroll-mt-20">
+        <div className="w-full px-0 md:max-w-6xl md:mx-auto md:px-6 lg:px-12">
+          <div className="bg-slate-950 rounded-none md:rounded-2xl p-6 md:p-12 shadow-2xl border-y md:border border-slate-800">
             {/* Header */}
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 mb-16">
               <div>
                 <p className="text-[11px] uppercase tracking-[0.3em] text-[#C49A6C] font-bold mb-4">Instant Booking</p>
                 <h2 className="text-2xl md:text-4xl font-black text-white">Reserve Your Chauffeur</h2>
               </div>
-              <a href="tel:+966549100151" className="inline-flex items-center gap-3 bg-[#C49A6C]/10 border border-[#C49A6C]/30 rounded-xl px-6 py-4 hover:bg-[#C49A6C]/20 transition-colors">
+              <a href="tel:+966549100151" className="inline-flex items-center justify-center md:justify-start gap-3 bg-[#C49A6C]/10 border border-[#C49A6C]/30 rounded-xl w-full md:w-auto px-6 py-4 hover:bg-[#C49A6C]/20 transition-colors">
                 <PhoneCall size={18} className="text-[#C49A6C]" />
                 <div>
                   <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">Available 24/7</p>
@@ -140,16 +139,16 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-slate-100 rounded-2xl overflow-hidden shadow-sm">
             {[
-              { num: '01', img: "/gmc-fleet/luxury-gmc-yukon-xl-saudi-arabia.webp", title: "Elite Chauffeurs", desc: "Vetted, bilingual professionals trained in diplomatic protocols and VIP discretion." },
-              { num: '02', img: "/gmc-fleet/premium-gmc-fleet-riyadh.webp", title: "Always Punctual", desc: "We arrive 15 minutes early. No exceptions — your time is the priority." },
-              { num: '03', img: "/gmc-fleet/vip-gmc-transportation-makkah.webp", title: "5-Star Cabin", desc: "Latest-model GMC Yukons with leather, climate zones, wifi, and refreshments." }
+              { num: '01', img: "/fleet/cadillac-escalade-chauffeur-service-ksa.webp", title: "Elite Chauffeurs", desc: "Vetted, bilingual professionals trained in diplomatic protocols and VIP discretion." },
+              { num: '02', img: "/fleet/mercedes-s-class-vip-chauffeur-service-saudi.webp", title: "Always Punctual", desc: "We arrive 15 minutes early. No exceptions — your time is the priority." },
+              { num: '03', img: "/fleet/gmc-yukon-xl-premium-chauffeur-saudi.webp", title: "5-Star Cabin", desc: "Latest-model GMC Yukons with leather, climate zones, wifi, and refreshments." }
             ].map((f, i) => (
               <div key={i} className="bg-white group p-10 hover:bg-[#0c1320] transition-all duration-500 overflow-hidden relative">
                 {/* Number */}
                 <span className="absolute top-6 right-8 text-[80px] font-black text-slate-50 group-hover:text-white/5 leading-none select-none transition-colors">{f.num}</span>
                 {/* Image */}
-                <div className="relative w-20 h-20 rounded-2xl overflow-hidden mb-8 shadow-lg">
-                  <Image src={f.img} alt={f.title} fill className="object-cover" />
+                <div className="relative w-full h-32 mb-6">
+                  <Image src={f.img} alt={f.title} fill className="object-contain" />
                 </div>
                 <h3 className="text-xl font-black text-slate-900 group-hover:text-white mb-3 transition-colors">{f.title}</h3>
                 <p className="text-slate-500 group-hover:text-slate-400 text-sm leading-relaxed transition-colors">{f.desc}</p>
@@ -173,12 +172,12 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             {/* Image */}
-            <div className="relative h-[280px] xs:h-[350px] sm:h-[450px] lg:h-[480px] rounded-2xl overflow-hidden shadow-2xl group">
+            <div className="relative h-[480px] rounded-2xl overflow-hidden shadow-2xl group">
               <Image
-                src="/gmc-fleet/gmc-interior-luxury-transport-saudi.webp"
-                alt="GMC Yukon Interior"
+                src="/fleet/mercedes-vito-vip-shuttle-service-ksa.webp"
+                alt="VIP Shuttle"
                 fill
-                className="object-cover group-hover:scale-105 transition-transform duration-700"
+                className="object-contain p-8"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0c1320]/80 to-transparent" />
               <div className="absolute bottom-8 left-8 right-8">
@@ -225,7 +224,11 @@ export default function Home() {
       <section className="relative py-24 bg-[#0c1320] text-white overflow-hidden">
         {/* BG image */}
         <div className="absolute inset-0">
-          <Image src="/gmc-fleet/gmc-yukon-airport-transfer-jeddah.webp" alt="Airport Transfer" fill className="object-cover opacity-20" />
+          <div className="absolute inset-0 flex items-center justify-end p-12 opacity-40">
+            <div className="relative w-full h-full max-w-xl">
+              <Image src="/fleet/mercedes-sprinter-luxury-van-transfer-saudi.webp" alt="Airport Transfer" fill className="object-contain" />
+            </div>
+          </div>
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1320] via-[#0c1320]/80 to-transparent" />
         </div>
         {/* Content */}
@@ -235,7 +238,7 @@ export default function Home() {
               <Plane size={16} className="text-[#C49A6C]" />
               <p className="text-[11px] uppercase tracking-[0.3em] text-[#C49A6C] font-bold">Airport Transfers · JED · RUH · DMM</p>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-6xl font-black leading-tight mb-6">
+            <h2 className="text-4xl md:text-6xl font-black leading-tight mb-6">
               Arrive in Style.<br /><span className="text-[#C49A6C]">Every Time.</span>
             </h2>
             <p className="text-slate-300 text-lg leading-relaxed mb-10">
@@ -342,10 +345,10 @@ export default function Home() {
       ═══════════════════════════════════════════ */}
       <section className="py-24 bg-[#701D45] relative overflow-hidden text-center">
         {/* Subtle texture */}
-        <div className="absolute inset-0 opacity-10 bg-[url('/gmc-fleet/premium-gmc-fleet-riyadh.webp')] bg-cover bg-center" />
+        <div className="absolute inset-0 opacity-10 bg-[url('/fleet/gmc-yukon-xl-premium-chauffeur-saudi.webp')] bg-cover bg-center" />
         <div className="relative z-10 max-w-3xl mx-auto px-6">
           <div className="h-px w-12 bg-[#C49A6C] mx-auto mb-8" />
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+          <h2 className="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
             Your Journey.<br />Elevated.
           </h2>
           <p className="text-white/70 text-lg max-w-lg mx-auto mb-10">

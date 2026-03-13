@@ -1,36 +1,43 @@
 import React from 'react';
-import { MessageCircle, Globe, ChevronRight, Star } from 'lucide-react';
+import { MessageCircle, Globe, ChevronRight, Facebook, Instagram, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[#0F172A] text-white pt-20 sm:pt-32 pb-12 overflow-hidden">
+    <footer className="relative bg-[#0F172A] text-white pt-32 pb-12 overflow-hidden">
       {/* Decorative Brand Accents */}
       <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-gold-accent/30 to-transparent" />
       <div className="absolute -top-24 -left-24 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px]" />
       <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-gold-accent/5 rounded-full blur-[100px]" />
 
-      <div className="max-w-7xl mx-auto px-6 sm:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16 mb-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
           {/* Brand & Mission */}
-          <div className="space-y-8">
+          <div className="space-y-10">
             <Link href="/" className="flex flex-col group">
-              <span className="text-2xl sm:text-3xl font-black tracking-tighter text-white flex items-center">
-                SAUDI <span className="ml-2 text-primary">CHAUFFEUR</span>
-              </span>
-              <div className="flex items-center gap-3 mt-1">
-                <div className="h-[1px] w-10 bg-gold-accent" />
-                <span className="text-[10px] tracking-[0.5em] uppercase text-slate-400 font-bold">First Class Travel</span>
+              <div className="relative h-14 w-56 -ml-4">
+                <Image 
+                  src="/logo-white.svg" 
+                  alt="Saudi Chauffeur Service" 
+                  fill 
+                  className="object-contain"
+                />
               </div>
             </Link>
             <p className="text-slate-400 font-light leading-relaxed text-sm max-w-xs">
               Providing professional ground transportation and executive protocol across the Kingdom of Saudi Arabia and GCC borders since 2018.
             </p>
             <div className="flex gap-4">
-               {['wa', 'ig', 'fb', 'tw'].map((social) => (
-                 <div key={social} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-gold-accent hover:border-gold-accent transition-all cursor-pointer group">
-                   <Star size={14} className="text-slate-400 group-hover:text-white" />
-                 </div>
+               {[
+                 { id: 'wa', icon: MessageCircle, url: 'https://wa.me/966549100151' },
+                 { id: 'ig', icon: Instagram, url: '#' },
+                 { id: 'fb', icon: Facebook, url: '#' },
+                 { id: 'tw', icon: Twitter, url: '#' }
+               ].map((social) => (
+                 <Link key={social.id} href={social.url} className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-gold-accent hover:border-gold-accent transition-all cursor-pointer group">
+                   <social.icon size={14} className="text-slate-400 group-hover:text-white" />
+                 </Link>
                ))}
             </div>
           </div>
@@ -98,11 +105,11 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-12 border-t border-white/5 flex flex-col items-center text-center gap-6">
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-8">
           <p className="text-slate-500 text-[10px] font-bold tracking-widest uppercase">
             © {new Date().getFullYear()} Saudi Chauffeur Service. All Rights Reserved.
           </p>
-          <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8">
+          <div className="flex items-center gap-8">
              <Link href="/privacy-policy/" className="text-slate-500 hover:text-white text-[10px] font-bold tracking-widest uppercase transition-colors">Privacy Policy</Link>
              <Link href="/terms-conditions/" className="text-slate-500 hover:text-white text-[10px] font-bold tracking-widest uppercase transition-colors">Terms of Service</Link>
              <div className="flex items-center gap-2">
