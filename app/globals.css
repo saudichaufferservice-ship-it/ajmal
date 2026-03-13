@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Google Sans", "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Naskh Arabic", "Noto Sans Thai", "Noto Sans Hebrew", "Noto Sans Bengali", sans-serif;
+  --font-paragraph: "Google Sans", "Noto Sans", "Noto Sans JP", "Noto Sans KR", "Noto Naskh Arabic", "Noto Sans Thai", "Noto Sans Hebrew", "Noto Sans Bengali", sans-serif;
+  
+  --color-primary: #701D45;
+  --color-primary-hover: #5A1737;
+  --color-gold-accent: #C49A6C;
+  --color-gold-light: #F5E6D3;
+  --color-slate-dark: #0F172A;
+  --color-off-white: #FFFFFF;
+}
+
+:root {
+  --background: #FFFFFF;
+  --foreground: #0F172A;
+  --primary: #701D45;
+  --primary-hover: #5A1737;
+  --gold-accent: #C49A6C;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-paragraph);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--primary);
+  color: white;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 20px; }
+::-webkit-scrollbar-thumb:hover { background: var(--primary-hover); }
